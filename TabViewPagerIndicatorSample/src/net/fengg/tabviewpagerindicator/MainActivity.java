@@ -17,9 +17,9 @@ import android.widget.LinearLayout;
 
 
 public class MainActivity extends FragmentActivity {
-	private TabSlidingView mIndicator;
+//	private TabSlidingView mIndicator;
 
-//	private SimpleViewPagerIndicator mIndicator;
+	private SimpleViewPagerIndicator mIndicator;
 	
 	private MyPagerAdapter mAdapter;
 	
@@ -42,7 +42,7 @@ public class MainActivity extends FragmentActivity {
 	}
 
 	private void setTabsValue() {
-		DisplayMetrics dm = getResources().getDisplayMetrics();
+		/*DisplayMetrics dm = getResources().getDisplayMetrics();
 		// 设置Tab是自动填充满屏幕的
 		mIndicator.setShouldExpand(true);
 		// 设置Tab的分割线是透明的
@@ -66,14 +66,14 @@ public class MainActivity extends FragmentActivity {
 		mIndicator.setTitileIconDirection(LinearLayout.VERTICAL);
 		mIndicator.setIconAbove(true);
 		//设置指示在上部
-		mIndicator.setIndicatorBelow(true);
+		mIndicator.setIndicatorBelow(true);*/
 	}
 	
 	private void initDatas()
 	{
 		mFragments = new TabFragment[mTitles.length];
 		//如果布局中已添加，则此处不需设置
-//		mIndicator.setTitles(mTitles);
+		mIndicator.setTitles(mTitles);
 		
 		for (int i = 0; i < mTitles.length; i++)
 		{
@@ -84,14 +84,14 @@ public class MainActivity extends FragmentActivity {
 		
 		mViewPager.setAdapter(mAdapter);
 		
-		mIndicator.setViewPager(mViewPager);
-//		mIndicator.setViewPager(mViewPager, 0);
+//		mIndicator.setViewPager(mViewPager);
+		mIndicator.setViewPager(mViewPager, 0);
 	}
 
 	private void initViews()
 	{
-		mIndicator = (TabSlidingView) findViewById(R.id.id_indicator);
-//		mIndicator = (SimpleViewPagerIndicator) findViewById(R.id.id_indicator);
+//		mIndicator = (TabSlidingView) findViewById(R.id.id_indicator);
+		mIndicator = (SimpleViewPagerIndicator) findViewById(R.id.id_indicator);
 		mViewPager = (ViewPager) findViewById(R.id.id_viewpager);
 	}
 	

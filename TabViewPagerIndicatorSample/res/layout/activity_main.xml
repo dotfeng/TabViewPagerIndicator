@@ -4,11 +4,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <net.fengg.tabviewpagerindicator.lib.TabSlidingView
+<!--     <net.fengg.tabviewpagerindicator.lib.TabSlidingView
         android:id="@+id/id_indicator"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:paddingTop="2dp"/>
+        android:paddingTop="2dp"/> -->
+    <net.fengg.tabviewpagerindicator.lib.SimpleViewPagerIndicator
+        android:id="@+id/id_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        fengg:item_count="3" >
+         <!-- <net.fengg.tabviewpagerindicator.lib.ColorTrackView  
+            android:id="@+id/id_tab_01"  
+            android:layout_width="match_parent"  
+            android:layout_height="match_parent"  
+            fengg:progress="1"  
+            fengg:text="简介"  
+            fengg:text_change_color="#ffff0000"  
+            fengg:text_origin_color="#ff000000"  
+            fengg:text_size="18sp" />  
+  
+        <net.fengg.tabviewpagerindicator.lib.ColorTrackView
+            android:id="@+id/id_tab_02"  
+            android:layout_width="match_parent"  
+            android:layout_height="match_parent"  
+            fengg:text="评价"  
+            fengg:text_change_color="#ffff0000"  
+            fengg:text_origin_color="#ff000000"  
+            fengg:text_size="18sp" />  
+  
+        <net.fengg.tabviewpagerindicator.lib.ColorTrackView
+            android:id="@+id/id_tab_03"  
+            android:layout_width="match_parent"  
+            android:layout_height="match_parent"  
+            fengg:text="相关"  
+            fengg:text_change_color="#ffff0000"  
+            fengg:text_origin_color="#ff000000"  
+            fengg:text_size="18sp" /> -->
+     </net.fengg.tabviewpagerindicator.lib.SimpleViewPagerIndicator>
     <android.support.v4.view.ViewPager
         android:id="@+id/id_viewpager"
        	android:layout_width="match_parent"
