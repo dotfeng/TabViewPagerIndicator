@@ -275,6 +275,10 @@ public class SimpleViewPagerIndicator extends LinearLayout
 			return mTextSize;
 		}
 
+		/**
+		 * 需在setTitles之前设置
+		 * @param textSize
+		 */
 		public void setTextSize(int textSize) {
 			this.mTextSize = textSize;
 		}

@@ -72,6 +72,7 @@ public class MainActivity extends FragmentActivity {
 	private void initDatas()
 	{
 		mFragments = new TabFragment[mTitles.length];
+//		mIndicator.setTextSize(12);
 		//如果布局中已添加，则此处不需设置
 		mIndicator.setTitles(mTitles);
 		
