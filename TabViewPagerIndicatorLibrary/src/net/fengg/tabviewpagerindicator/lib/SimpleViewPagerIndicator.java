@@ -31,6 +31,10 @@ public class SimpleViewPagerIndicator extends LinearLayout
 	private int mTabVisibleCount = COUNT_DEFAULT_TAB;
 	private List<ColorTrackView> mTabs = new ArrayList<ColorTrackView>();  
 	
+	private int mTextSize = 25;
+	private int mTextOriginColor = 0xff000000;
+	private int mTextChangeColor = 0xffff0000;
+	
 	public ViewPager mViewPager;
 
 	public SimpleViewPagerIndicator(Context context)
@@ -144,7 +148,7 @@ public class SimpleViewPagerIndicator extends LinearLayout
 				progress = 1;
 			}
 			
-			ColorTrackView tv = new ColorTrackView(getContext(), mTitles[i], 25, 0xff000000, 0xffff0000, progress, 0);
+			ColorTrackView tv = new ColorTrackView(getContext(), mTitles[i], mTextSize, mTextOriginColor, mTextChangeColor, progress, 0);
 			LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 			lp.width = getScreenWidth() / mTabVisibleCount;
@@ -265,5 +269,29 @@ public class SimpleViewPagerIndicator extends LinearLayout
 			DisplayMetrics outMetrics = new DisplayMetrics();
 			wm.getDefaultDisplay().getMetrics(outMetrics);
 			return outMetrics.widthPixels;
+		}
+
+		public int getTextSize() {
+			return mTextSize;
+		}
+
+		public void setTextSize(int textSize) {
+			this.mTextSize = textSize;
+		}
+
+		public int getTextOriginColor() {
+			return mTextOriginColor;
+		}
+
+		public void setTextOriginColor(int textOriginColor) {
+			this.mTextOriginColor = textOriginColor;
+		}
+
+		public int getTextChangeColor() {
+			return mTextChangeColor;
+		}
+
+		public void setmTextChangeColor(int textChangeColor) {
+			this.mTextChangeColor = textChangeColor;
 		}
 }

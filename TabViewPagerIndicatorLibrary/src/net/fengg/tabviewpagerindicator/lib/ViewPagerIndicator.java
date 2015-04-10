@@ -77,6 +77,11 @@ public class ViewPagerIndicator extends LinearLayout
 	 * tab上的内容
 	 */
 	private String[] mTitles;
+	
+	private int mTextSize = 25;
+	private int mTextOriginColor = 0xff000000;
+	private int mTextChangeColor = 0xffff0000;
+	
 	/**
 	 * 与之绑定的ViewPager
 	 */
@@ -183,7 +188,7 @@ public class ViewPagerIndicator extends LinearLayout
 				progress = 1;
 			}
 			
-			ColorTrackView tv = new ColorTrackView(getContext(), mTitles[i], 18, 0xff000000, 0xffff0000, progress, 0);
+			ColorTrackView tv = new ColorTrackView(getContext(), mTitles[i], mTextSize, mTextOriginColor, mTextChangeColor, progress, 0);
 			LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 			lp.width = getScreenWidth() / mTabVisibleCount;
@@ -449,6 +454,30 @@ public class ViewPagerIndicator extends LinearLayout
 		DisplayMetrics outMetrics = new DisplayMetrics();
 		wm.getDefaultDisplay().getMetrics(outMetrics);
 		return outMetrics.widthPixels;
+	}
+
+	public int getTextSize() {
+		return mTextSize;
+	}
+
+	public void setTextSize(int textSize) {
+		this.mTextSize = textSize;
+	}
+
+	public int getTextOriginColor() {
+		return mTextOriginColor;
+	}
+
+	public void setTextOriginColor(int textOriginColor) {
+		this.mTextOriginColor = textOriginColor;
+	}
+
+	public int getTextChangeColor() {
+		return mTextChangeColor;
+	}
+
+	public void setTextChangeColor(int textChangeColor) {
+		this.mTextChangeColor = textChangeColor;
 	}
 
 }
